@@ -12,26 +12,30 @@ function sortRatings() {
     .then((data) => {
         let keys = Object.keys(data);
 
+        //PUTTING RESLOVE INTO RDATA TO PULL DATA FROM
         for (let keys in data) {
             rData = data[keys];
         } 
-        
 
+        //PUSHING THE RATINGS AND RESTRAUNT NAMES INTO AN ARRAY I CAN THEN SORT
         for (var i = 0; i < rData.length; i++){
-            ratings.push(rData[i].my_rating);
-            restraunts = rData[i].restaurant;
             both.push(rData[i].my_rating + ', ' + rData[i].restaurant);
         }
 
-        
+        //SORTING THE ARRAY
         both.sort();
-        both.reverse();
-        console.log('both', both);
+
+        //IT CAME OUT LOWEST TO HIGHTEST SO I REVERSED THE ARRAY
+        both.reverse();   
+        //console.log('both', both);
+
+        //LOOPING THROUGH THE SORTED ARRAY TO BUILD A STRING TO PRINT TO DOM
         for (var x = 0; x < both.length; x++) {
             ratingsList += `<div>`;
-            ratingsList += `<p>${both[x]}</p>`;
+            ratingsList += `<p class="rated-cards">${both[x]}</p>`;
             ratingsList += `</div>`;
         }
+        //PRINTING THE ARRAY
         document.getElementById('restaurant-ratings').innerHTML = ratingsList;
     }    
 );
