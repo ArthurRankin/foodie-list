@@ -55,7 +55,6 @@ function matchCities() {
             restD = restData[keys];
         }
         
-        console.log('this is your restraunt data', restD.city_id);
         $("#select-area").change(function(event) {   
             let filteredCities = [];
             let value = event.target.value;
@@ -66,7 +65,7 @@ function matchCities() {
                 }
             }
             document.getElementById('city-rests').innerHTML = filteredCities;
-            console.log('this is the city ids', filteredCities);
+            console.log('this is the city list of restraunts', filteredCities);
         });
     });
 }
@@ -97,3 +96,18 @@ function citySelector() {
 
 matchCities();
 citySelector();
+
+
+function nashville() {
+    $("#select-area").change(function(event){
+        let value = event.target.value;
+        let nash = '';
+        if (value == 7){
+            nash += `<p>***Home town selected****</p>`;
+            console.log('this is the nash thing', nash);
+        }
+        document.getElementById('hometown').innerHTML = nash;
+    });
+}
+
+nashville();
