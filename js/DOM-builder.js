@@ -44,9 +44,10 @@ sortRatings();
 
 let restD;
 let cityD;
-let cityID;
+let cityID = [];
 let citySelect = '';
 let filteredCities = [];
+let select = document.getElementById('select-area');
 
 function matchCities() {
     //GRABING RESTRAUNT DATA********************************************
@@ -54,18 +55,18 @@ function matchCities() {
         for (let keys in restData){
             restD = restData[keys];
         }
-        console.log(restD);
+        
+        console.log('this is your restraunt data', restD.city_id);
         $("#select-area").change(function(event) {
-            console.log(event);
             let value = event.target.value;
-            console.log(value);
+            console.log('this is the selector value', value);
             for (var a = 0; a < restD.length; a++) {
-                if(restD[a].city_id === value){
-                    filteredCities.push(restD[a].restaurant);
-                    console.log('filtered cities', filteredCities);
+                if(restD[a].city_id == value){
+                    cityID += `<div>${restD[a].restaurant}</div>`;
                 }
-                
             }
+            document.getElementById('city-rests').innerHTML = cityID;
+            console.log('this is the city ids', cityID);
         });
     });
 }
