@@ -46,7 +46,6 @@ let restD;
 let cityD;
 let cityID = [];
 let citySelect = '';
-let filteredCities = [];
 let select = document.getElementById('select-area');
 
 function matchCities() {
@@ -57,16 +56,17 @@ function matchCities() {
         }
         
         console.log('this is your restraunt data', restD.city_id);
-        $("#select-area").change(function(event) {
+        $("#select-area").change(function(event) {   
+            let filteredCities = [];
             let value = event.target.value;
             console.log('this is the selector value', value);
             for (var a = 0; a < restD.length; a++) {
                 if(restD[a].city_id == value){
-                    cityID += `<div>${restD[a].restaurant}</div>`;
+                    filteredCities += `<div>${restD[a].restaurant}</div>`;
                 }
             }
-            document.getElementById('city-rests').innerHTML = cityID;
-            console.log('this is the city ids', cityID);
+            document.getElementById('city-rests').innerHTML = filteredCities;
+            console.log('this is the city ids', filteredCities);
         });
     });
 }
