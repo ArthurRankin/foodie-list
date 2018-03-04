@@ -27,7 +27,6 @@ function sortRatings() {
 
         //IT CAME OUT LOWEST TO HIGHTEST SO I REVERSED THE ARRAY**********
         both.reverse();   
-        //console.log('both', both);
 
         //LOOPING THROUGH THE SORTED ARRAY TO BUILD A STRING TO PRINT TO DOM
         for (var x = 0; x < both.length; x++) {
@@ -58,14 +57,12 @@ function matchCities() {
         $("#select-area").change(function(event) {   
             let filteredCities = [];
             let value = event.target.value;
-            console.log('this is the selector value', value);
             for (var a = 0; a < restD.length; a++) {
                 if(restD[a].city_id == value){
                     filteredCities += `<div>${restD[a].restaurant}</div>`;
                 }
             }
             document.getElementById('city-rests').innerHTML = filteredCities;
-            console.log('this is the city list of restraunts', filteredCities);
         });
     });
 }
@@ -79,15 +76,14 @@ function citySelector() {
         for (let keys in cityData){
             cityD = cityData[keys];
         }
-        //console.log('cityD', cityD);
-        
+
         //LOOPING THROUGH CITY DATA TO GET THE CITY NAMES AND ID'S***********
         for (var i = 0; i < cityD.length; i++) {
             //BUILDING STRING FOR SELECTOR************************
             citySelect += `<option value=${cityD[i].id}>${cityD[i].city}</option>`;
         }
-        //console.log("citySelect", citySelect);
         document.getElementById('select-area').innerHTML = citySelect;
+        document.getElementById('new-restraunt').innerHTML = citySelect;
     });
 }
 
@@ -103,8 +99,7 @@ function nashville() {
         let value = event.target.value;
         let nash = '';
         if (value == 7){
-            nash += `<p>***Home town selected****</p>`;
-            console.log('this is the nash thing', nash);
+            nash += `<p>***NashVegas selected****</p>`;
         }
         document.getElementById('hometown').innerHTML = nash;
     });
