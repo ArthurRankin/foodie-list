@@ -8,12 +8,35 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 <body>
-    <select id="select-area"></select>
-    <div id="hometown"></div>
-    <section id="city-rests"></section>
-    <h1>restraunts by rating!</h1>
+    <h1>FOODIES</h1>
+    
+    <p>Select a city to see Restraunts in the area</p>
+
+    <select name="select city" id="select-area"></select>
+
+    <div class="city-display">
+        <div id="hometown"></div>
+        <section id="city-rests"></section>
+    </div>
+
+    <form>
+        <select id="new-restraunt"></select>
+        <input type="text" placeholder="Restraunts Name">
+    </form>
+
+    <h3>Restraunts by Rating!</h3>
+
     <p>(highest to lowest)</p>
-    <section id="restaurant-ratings"></section>
+
+    <div class="rest-rating-box">
+        <section id="restaurant-ratings"></section>
+    </div>    
+
+
+
+
+
+
     <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="

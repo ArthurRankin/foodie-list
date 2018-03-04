@@ -83,6 +83,7 @@ function citySelector() {
             citySelect += `<option value=${cityD[i].id}>${cityD[i].city}</option>`;
         }
         document.getElementById('select-area').innerHTML = citySelect;
+        document.getElementById('new-restraunt').innerHTML = citySelect;
     });
 }
 
@@ -98,7 +99,7 @@ function nashville() {
         let value = event.target.value;
         let nash = '';
         if (value == 7){
-            nash += `<p>***Home town selected****</p>`;
+            nash += `<p>***NashVegas selected****</p>`;
         }
         document.getElementById('hometown').innerHTML = nash;
     });

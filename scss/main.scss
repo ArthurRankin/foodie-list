@@ -1,5 +1,25 @@
-body {
-    background-color: brown;
-    color: cornflowerblue;
+html, body {
+    background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://www.foodiesfeed.com/wp-content/uploads/2016/07/fancy-restaurant-interior.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: aqua;
+    font-size: 1.2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: center;
+    overflow: auto;
+}
+
+.city-display{
+    margin-left: 30%;
+    margin-right: 30%;
+    border: 3px solid darkblue;
+    min-height: 200px;
+}
+
+.rest-rating-box{
+    border: 3px solid white;
+    max-height: 465px;
+    overflow: scroll;
 }
 
